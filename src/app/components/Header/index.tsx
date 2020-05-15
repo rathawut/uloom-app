@@ -14,7 +14,7 @@ import classNames from 'classnames';
 
 interface Props {
   open: boolean;
-  handleToggleDrawer: any;
+  handleToggleDrawer: () => void;
 }
 
 const drawerWidth = 240;

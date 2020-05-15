@@ -15,7 +15,22 @@ import { GlobalStyle } from 'styles/global-styles';
 import { HomePage } from './containers/HomePage';
 import { NotFoundPage } from './components/NotFoundPage/Loadable';
 
+import EmptyLayout from './layouts/EmptyLayout';
 import MainLayout from './layouts/MainLayout';
+
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
+const EmptyLayoutRoute = ({ component: Component, ...rest }) => {
+  return (
+    <Route
+      {...rest}
+      render={routeProps => (
+        <EmptyLayout>
+          <Component {...routeProps} />
+        </EmptyLayout>
+      )}
+    />
+  );
+};
 
 const MainLayoutRoute = ({ component: Component, ...rest }) => {
   return (
