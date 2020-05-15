@@ -12,8 +12,23 @@ import { Switch, Route } from 'react-router-dom';
 
 import { GlobalStyle } from 'styles/global-styles';
 
-import { HomePage } from './containers/HomePage/Loadable';
+import { HomePage } from './containers/HomePage';
 import { NotFoundPage } from './components/NotFoundPage/Loadable';
+
+import MainLayout from './layouts/MainLayout';
+
+const MainLayoutRoute = ({ component: Component, ...rest }) => {
+  return (
+    <Route
+      {...rest}
+      render={routeProps => (
+        <MainLayout>
+          <Component {...routeProps} />
+        </MainLayout>
+      )}
+    />
+  );
+};
 
 export function App() {
   return (
@@ -24,9 +39,8 @@ export function App() {
       >
         <meta name="description" content="A React Boilerplate application" />
       </Helmet>
-
       <Switch>
-        <Route exact path="/" component={HomePage} />
+        <MainLayoutRoute exact path="/" component={HomePage} />
         <Route component={NotFoundPage} />
       </Switch>
       <GlobalStyle />
