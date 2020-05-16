@@ -1,3 +1,3 @@
-## Hifz App (الحفظ)
+## Ulooom App (العُلُوم)
 
-The app that helps you remember Al-Quran, Al-Hadith, and anything.
+The app that helps you manage your translation projects.
